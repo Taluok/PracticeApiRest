@@ -1,0 +1,26 @@
+normalmente en cualquier prueba tecnica nos dan por lo menos una Api, nos pueden dar mas de dos apis o nos pueden dar 
+una api y hacer algo extra como un infinity scroll o una validazion de datos , etc (seguro es un feching de datos)
+
+objetivo de la prueba : 
+
+-recuperar un hecho aleatorio de gatos dela primera API
+- Recuperar la primera palabra del hecho
+- muestra una imagen de un gato con la primera palabra del hecho.
+
+Esta prueba es mas que nada para saber si sos capaz de realizr un feching de datos y utilizar minimamente react ademas de manejar dos estados 
+que uno dependa del otro
+
+hacemos al final un test ntuend
+
+*Utilizo el useEffect para realizar el fetching de datos*
+
+//realizo el featching de datos     
+    useEffect(() => {
+        fetch('https://catfact.ninja/fact')
+            .then(res => res.json())
+            .then(data => setFact(data.fact))
+    },[]) //no olvidar si o si esta dependencia []
+
+
+
+{fact && <p>{fact}</p>} /*renderizado condicional*/
